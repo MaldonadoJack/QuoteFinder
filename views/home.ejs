@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("partials/header.ejs") %>
+
+<body class="text-center">
+    <h1 class="bg-primary text-white p-4">Famous Quotes</h1>
+
+    <div id="searchDiv">
+        <form id="keywordForm" action="/searchByKeyWord" method="GET">
+            <label>Keyword: <input type="text" name="keyword" id="keyword"></label>
+            <button class="btn btn-outline-success">Search</button>
+        </form>
+
+        <form action="/searchByAuthor" method="GET">
+            <label>Author:
+                <select name="authorId">
+                    <% for (let i of authorsRows) { %>
+                        <option value="<%= i.authorId %>"><%= i.firstName %> <%= i.lastName %></option>
+                    <% } %>
+                </select>
+            </label>
+            <button class="btn btn-outline-success">Search</button>
+        </form>
+
+        <form action="/searchByCategory" method="GET">
+            <label>Cateogry:
+                <select name="category">
+                    <% for (let i of categoryRows) { %>
+                        <option value="<%= i.category %>"><%= i.category %></option>
+                    <% } %>
+                </select>
+            </label>
+            <button class="btn btn-outline-success">Search</button>
+        </form>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
+
+    <script src="/js/home.js"></script>
+</body>
+
+</html>
