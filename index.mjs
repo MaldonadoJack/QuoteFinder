@@ -65,6 +65,17 @@ app.get('/searchByAuthor' , async (req, res) => {
     res.render('results.ejs' , { rows })
 });
 
+app.get('/searchByLikes', async (req, res) => {
+    let lowerLikes = req.query.lower;
+    let higherLikes = req.query.higher;
+
+    let sql = `SELECT authorId, firstName, lastName, quote FROM authors NATURAL JOIN quotes WHERE likes BETWEEN ? AND ?`;
+    let sqlParams = [`${lowerLikes}`, `${higherLikes}`];
+    const [rows] = await pool.query(sql, sqlParams);
+
+    res.render('results.ejs', { rows });
+})
+
 // local API to get all info for a specific author
 app.get('/api/authorInfo/:authorId', async (req, res) => {
     let authorId = req.params.authorId;

@@ -33,6 +33,16 @@
             </label>
             <button class="btn btn-outline-success">Search</button>
         </form>
+
+        <form action="/searchByLikes" method="GET">
+            <label>Min Likes:</label>
+            <input type="number" id="lower" name="lower" required>
+
+            <label>Max Likes:</label>
+            <input type="number" id="higher" name="higher" required>
+
+            <button class="btn btn-outline-success">Search</buton>
+        </form>
     </div>
 
     <%- include("partials/footer.ejs") %>

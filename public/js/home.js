@@ -4,8 +4,8 @@ function validateForm() {
     let keyword = document.querySelector("#keyword").value;
     // alert(keyword);
 
-    if (keyword.length < 3) {
-        alert("Keyword must be longer than 2 characters");
+    if (keyword.length < 4) {
+        alert("Keyword must be longer than 3 characters");
         event.preventDefault(); //prevents the submission of the form
     }
 }

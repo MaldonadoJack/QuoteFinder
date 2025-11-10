@@ -20,5 +20,11 @@ async function getAuthorInfo() {
     console.log(data);
     $("#authorName").textContent = data[0].firstName + " " + data[0].lastName;
     $("#authorImg").src = data[0].portrait;
+    $("#biography").textContent = data[0].biography;
+    $("#dob").textContent = data[0].dob;
+    $("#dod").textContent = data[0].dod;
+    $("#sex").textContent = data[0].sex;
+    $("#profession").textContent = data[0].profession;
+    $("#country").textContent = data[0].country;
     $("#authorModal").showModal();
 }

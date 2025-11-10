@@ -6,6 +6,10 @@
 <body class="text-center">
     <h1 class="bg-primary text-white p-4">Famous Quotes</h1>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand h1 border bg-secondary text-white rounded" href="/"">Home</a>
+    </nav>
+
     <% for (let i of rows) {%>
         "<%=i.quote%>"<br>
         <a class="authors" href="#" authorId="<%=i.authorId%>"> <%=i.firstName%> <%=i.lastName%></a>
@@ -15,7 +19,13 @@
     <dialog id="authorModal">
         <div id="authorInfo">
             <h2 id="authorName"></h2>
-            <img id="authorImg" style="width: 300px">
+            <img id="authorImg" style="width: 300px"> <br>
+            Date of Birth: <p id="dob"></p>
+            Date of Death: <p id="dod"></p>
+            Sex: <p id="sex"></p>
+            Profession: <p id="profession"></p>
+            Country: <p id="country"></p>
+            <p id="biography"></p>
         </div>
         <button id="closeModal">Close</button>
     </dialog>
